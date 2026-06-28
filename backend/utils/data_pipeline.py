@@ -4,8 +4,12 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
+UTILS_DIR = os.path.dirname(os.path.abspath(__file__))
+DEFAULT_RAW_DIR = os.path.abspath(os.path.join(UTILS_DIR, '..', 'data', 'raw'))
+DEFAULT_PROCESSED_DIR = os.path.abspath(os.path.join(UTILS_DIR, '..', 'data', 'processed'))
+
 class CMAPSSDataPipeline:
-    def __init__(self, raw_data_dir='backend/data/raw', processed_data_dir='backend/data/processed'):
+    def __init__(self, raw_data_dir=DEFAULT_RAW_DIR, processed_data_dir=DEFAULT_PROCESSED_DIR):
         """
         Initialize the data pipeline for CMAPSS dataset.
         
